@@ -1,33 +1,33 @@
-import { Routes } from "@angular/router";
-import { LayoutComponent } from "@shared/components/layout/layout.component";
-import { NotFoundComponent } from "@info/pages/not-found/not-found.component";
+import { Routes } from '@angular/router'
+import { LayoutComponent } from '@shared/components/layout/layout.component'
+import { NotFoundComponent } from '@info/pages/not-found/not-found.component'
 
 export const routes: Routes = [
   {
-    path: "",
+    path: '',
     component: LayoutComponent,
     children: [
       {
-        path: "",
+        path: '',
         loadComponent: () =>
-          import("./domains/products/pages/list/list.component"),
+          import('./domains/products/pages/list/list.component'),
       },
       {
-        path: "about",
+        path: 'about',
         loadComponent: () =>
-          import("./domains/info/pages/about/about.component"),
+          import('./domains/info/pages/about/about.component'),
       },
       {
-        path: "product/:id",
+        path: 'product/:id',
         loadComponent: () =>
           import(
-            "./domains/products/pages/product-detail/product-detail.component"
+            './domains/products/pages/product-detail/product-detail.component'
           ),
       },
     ],
   },
   {
-    path: "**",
+    path: '**',
     component: NotFoundComponent,
   },
-];
+]
